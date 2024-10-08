@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var texto = prompt("Introduce una cadena: ");
+        console.log("Tamaño de la cadena: " + texto.length);
+        console.log("En la posición 8: " + texto.charAt(8));
+        if (texto.indexOf('t') == -1) {
+            console.log("No tiene el caracter t");
+        }else {
+            console.log("El carácter 't' está en la posición: " + texto.indexOf('t'));
+        }
+        console.log(texto.toUpperCase());
+        console.log(texto.toLowerCase());
+    </script>
+</body>
+</html>

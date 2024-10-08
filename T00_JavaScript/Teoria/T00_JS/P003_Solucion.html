@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombre;
+        var nombres = [];
+        while(true){
+            nombre = prompt("Ingrese un nombre (o escriba 0 para finalizar): ")
+            if (nombre === "0") {
+                break
+            }
+            nombres.push(nombre);
+            var mensaje = "Hola estos son los nombres: " + nombres.join(", ");
+        }
+        alert(mensaje)
+    </script>
+</body>
+</html>

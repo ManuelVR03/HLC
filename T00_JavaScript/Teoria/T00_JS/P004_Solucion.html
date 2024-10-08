@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var estudiantes = [];
+        for(i=0; i<3; i++){
+            nombre = prompt("Introduce nombre: ");
+            edad = prompt("Introduce edad: ");
+            carrera = prompt("Introduce carrera: ");
+            estudiantes.push({nombre, edad, carrera});
+        }
+        estudiantes.forEach(function(alu){
+            console.log("El estudiante " + alu.nombre + " tiene " + alu.edad + " y estudia " + alu.carrera);
+        });
+
+    </script>
+</body>
+</html>

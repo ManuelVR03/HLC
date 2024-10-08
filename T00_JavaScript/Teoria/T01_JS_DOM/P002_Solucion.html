@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numeros = new Array(5);
+        for(i=0; i<5; i++){
+            let num = prompt("Introduce un número: ");
+            numeros.push(num);
+        }
+        console.log(numeros.reverse());
+        var newElemento = prompt("Introduce otro elemento: ");
+        numeros.unshift(newElemento);
+        console.log(numeros);
+    </script>
+</body>
+</html>
