@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <input id="aceptar" type="button" value="Aceptar">
+    <input id="cancelar" type="button" value="Cancelar">
+    <script>
+        var parrafo = document.getElementsByTagName("p")[0];
+        var btnAceptar = document.getElementById("aceptar");
+        var btnCancelar = document.getElementById("cancelar");
+
+        btnAceptar.onclick = function() {parrafo.innerText = "Está usted aceptando.";};
+        btnCancelar.onclick = function() {parrafo.innerText = "Está usted cancelando.";};
+    </script>
+</body>
+</html>
