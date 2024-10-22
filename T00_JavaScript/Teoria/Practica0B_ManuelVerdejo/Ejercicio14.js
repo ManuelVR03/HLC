@@ -1,9 +1,3 @@
-/*
-Basándonos en el ejercicio anterior, añadiremos un botón Disponible para cada uno de los
-productos de nuestro array con una clase disabled (color gris). Al clicar sobre este, se cambiará
-la clase a enabled (color verde), si se vuelve a clicar comprobará su estado y lo cambiará al
-contrario.
-*/
 function disponible(boton){
     if (boton.classList.contains("disabled")) {
         boton.classList.remove("disabled");

@@ -1,11 +1,3 @@
-/*
-13. Recorre el array y representa en el HTML cada producto con su precio y una imagen.
-Para añadir la imagen deberás descargar una imagen para cada producto y guardarla en una
-carpeta img con el nombre de cada uno de ellos. Deberá añadir el atributo src para cada una de
-las imágenes de forma dinámica.
-*/
-
-
 const productos = [
 { id: 1, nombre: 'Patata', precio: 1, imagen: 'patata.jpg'},
 { id: 2, nombre: 'Cebolla', precio: 1.2, imagen: 'cebolla.jpg' },

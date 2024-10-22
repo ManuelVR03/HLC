@@ -1,10 +1,3 @@
-/*12. Basándonos en el ejercicio anterior, añadiremos cada vez que se crea un nuevo producto, dos
-botones junto a este.
-- Botón SÍ (significa comprado): cuando se clique sobre él, el nombre del producto será
-marcado verde y en cursiva.
-- Botón NO (significa no comprado): cuando se clique sobre él, el nombre del producto
-será marcado como rojo y en negrita.*/
-
 function comprado(boton){
     boton.parentNode.style.color = "green";
     boton.parentNode.style.fontStyle = "italic";

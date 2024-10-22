@@ -1,23 +1,24 @@
-/*
-8. Modificando el ejercicio anterior. Tendremos dos Arrays: ciudades_gratis (Sevilla, Madrid,
-Valencia, Barcelona) y ciudades_gastos(Cantabria, Pontevedra, Toledo, Segovia).
-Se añade las siguientes condiciones:
-- Si la ciudad que indica el usuario está en el array ciudades_gastos se preguntará por los
-gastos de envío, y se añade a la etiqueta junto a la fecha.
-- Si la ciudad que indica el usuario está en el array ciudades_gratis se añadirá a la etiqueta
-un mensaje diciendo que los gastos son gratuitos y se añade la fecha.
-- Si la ciudad no se encuentra en ninguno de los arrays, se añadirá un mensaje a la
-etiqueta diciendo que no se pueden realizar envíos y se oculta la etiqueta de la fecha de
-envío.
-*/
 var ciudades_gratis = ["Sevilla", "Madrid", "Valencia", "Barcelona"];
 var ciudades_gastos = ["Cantabria", "Pontevedra", "Toledo", "Segovia"];
+var usuario = prompt("Introduce una ciudad: ").toLocaleLowerCase();
+var ciudad = usuario.charAt(0).toLocaleUpperCase() + usuario.slice(1);
+var spciudad = document.getElementById("ciudad");
+var spgastos = document.getElementById("gastos");
+var spfecha = document.getElementById("fecha");
+var fecha = new Date();
 
-window.onload = function (){
-    var ciudad = prompt("Introduce una ciudad: ");
-
-
-    document.getElementById("ciudad").textContent = prompt("Introduce una ciudad: ");
-    document.getElementById("gastos").textContent = prompt("Introduce los gastos de envio: ") + "€";
-    document.getElementById("fecha").textContent = prompt("Introduce la fecha de hoy: ");
+function cambio() {
+    spciudad.textContent = ciudad;
+    if (ciudades_gastos.includes(ciudad)) {
+        spgastos.textContent = prompt("Introduce el precio de los gastos de envíos: ") + "€";
+        spfecha.textContent = fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear();
+    } else if (ciudades_gratis.includes(ciudad)) {
+        spgastos.textContent = "Los gastos son gratuitos"
+        spfecha.textContent = fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear();
+    } else {
+        spgastos.textContent = "No se puede realizar envíos"
+        document.getElementsByTagName("h1")[0].style.display = "none";
+    }
 }
+
+cambio();
