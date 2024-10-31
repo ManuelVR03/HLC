@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     Listas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <div class="ion-padding">
+    <ion-input type="text" [(ngModel)]="tarea" placeholder="Introduce la tarea"></ion-input>
+    <ion-button expand="block" (click)="agrega()">Agregar tarea</ion-button> 
+    <div>
+      <p>Lista de tareas</p>
+      <ul id="lista">
+      </ul>
+    </div>
+       
+  </div>
+</ion-content>
