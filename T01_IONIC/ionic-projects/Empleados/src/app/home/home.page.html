@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Buscar Empleados
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Categoria:</ion-label>
+      <ion-radio-group>
+        <ion-radio value="analista">Analista</ion-radio><br />
+        <ion-radio value="programador_senior">Programador Senior</ion-radio><br />
+        <ion-radio value="programador_junior">Programador Junior</ion-radio>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ciudad</ion-label>
+      <ion-select aria-label="Ciudad">
+        <ion-select-option value="sevilla">Sevilla</ion-select-option>
+        <ion-select-option value="madrid">Madrid</ion-select-option>
+        <ion-select-option value="barcelona">Barcelona</ion-select-option>
+        <ion-select-option value="zaragoza">Zaragoza</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Salario mínimo" placeholder="Introduce el sueldo mínimo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox>Prácticas</ion-checkbox>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

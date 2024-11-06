@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Lista de Elementos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item *ngFor="let item of items; let i = index">
+        {{ item }}
+        <ion-button color="danger" slot="end" (click)="borrarElemento(i)">
+          Eliminar
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="nuevoElemento" placeholder="Nuevo elemento"></ion-input>
+        <ion-button (click)="agregarElemento()">Agregar</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-content>

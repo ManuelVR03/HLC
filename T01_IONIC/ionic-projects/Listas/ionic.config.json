@@ -1,0 +1,7 @@
+{
+  "name": "Listas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

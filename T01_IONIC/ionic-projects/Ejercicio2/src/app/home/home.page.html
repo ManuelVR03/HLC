@@ -35,7 +35,7 @@
       <ion-radio value="no">No</ion-radio>
       </ion-radio-group>
     </ion-item>
-    <ion-item>
+    <ion-item [disabled]="!apellidos || !nombre || !provincia || estadoCivil !== 'casado' || familiaNumerosa === 'no'">
       <ion-button (click)="enviar()">Enviar</ion-button>
     </ion-item>
   </ion-list>
