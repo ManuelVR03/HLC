@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Formulario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Apellidos: </ion-label>
+      <ion-input type="text" [(ngModel)]="apellidos"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Provincia: </ion-label>
+      <ion-input type="text" [(ngModel)]="provincia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select aria-label="estado_civil" placeholder="Estado Civil" [(ngModel)]="estadoCivil">
+      <ion-select-option value="casado">Casado</ion-select-option>
+      <ion-select-option value="divorciado">Divorciado</ion-select-option>
+      <ion-select-option value="soltero">Soltero</ion-select-option>
+      <ion-select-option value="separado">Separado</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="estadoCivil !== 'soltero'">
+      <ion-label>Familia Numerosa: </ion-label>
+      <ion-radio-group [(ngModel)]="familiaNumerosa">
+      <ion-radio value="si">Sí</ion-radio>
+      <ion-radio value="no">No</ion-radio>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="enviar()">Enviar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
