@@ -812,6 +812,28 @@ export class HomePage {
     }
   ];
 
+  categoriaF: string = "";
+  ciudadF: string = "";
+  salarioF: number = 0;
+  practicasF: boolean = false;
+  buscador = this.empleados;
+
   constructor() { }
 
+  buscar(){
+    this.buscador = this.empleados.filter(empleado => {
+      return (this.categoriaF == "" || empleado.categoria == this.categoriaF) &&
+             (this.ciudadF == "" || empleado.ciudad == this.ciudadF) &&
+             (this.salarioF == 0 || empleado.sueldo > this.salarioF) &&
+             (this.practicasF == false || empleado.practicas == this.practicasF);
+    });
+  }
+
+  limpiar(){
+    this.buscador = this.empleados;
+    this.categoriaF = "";
+    this.ciudadF = "";
+    this.salarioF = 0;
+    this.practicasF = false;
+  }
 }

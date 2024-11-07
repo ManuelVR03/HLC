@@ -10,7 +10,7 @@
   <ion-list>
     <ion-item>
       <ion-label>Categoria:</ion-label>
-      <ion-radio-group>
+      <ion-radio-group [(ngModel)]="categoriaF">
         <ion-radio value="analista">Analista</ion-radio><br />
         <ion-radio value="programador_senior">Programador Senior</ion-radio><br />
         <ion-radio value="programador_junior">Programador Junior</ion-radio>
@@ -18,7 +18,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Ciudad</ion-label>
-      <ion-select aria-label="Ciudad">
+      <ion-select aria-label="Ciudad" [(ngModel)]="ciudadF">
         <ion-select-option value="sevilla">Sevilla</ion-select-option>
         <ion-select-option value="madrid">Madrid</ion-select-option>
         <ion-select-option value="barcelona">Barcelona</ion-select-option>
@@ -26,11 +26,23 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-input label="Salario mínimo" placeholder="Introduce el sueldo mínimo"></ion-input>
+      <ion-input label="Salario mínimo" placeholder="Introduce el sueldo mínimo" [(ngModel)]="salarioF"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-checkbox>Prácticas</ion-checkbox>
+      <ion-checkbox [(ngModel)]="practicasF">Prácticas</ion-checkbox>
+    </ion-item>
+    <ion-button expand="block" (click)="buscar()">Buscar</ion-button>
+    <ion-button expand="block" (click)="limpiar()" color="medium">Limpiar</ion-button>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let empleado of buscador">
+      <ion-label>
+        {{empleado.apellidos}}, {{empleado.nombre}}<br />
+        <ion-note>
+            Ciudad: {{empleado.ciudad.charAt(0).toUpperCase() + empleado.ciudad.slice(1)}} | Categoria: {{empleado.categoria}}<br />
+            Sueldo: ${{empleado.sueldo | number:'1.2-2'}} | En Prácticas: {{empleado.practicas ? "Sí" : "No"}}
+        </ion-note>
+      </ion-label>
     </ion-item>
   </ion-list>
-  
 </ion-content>
