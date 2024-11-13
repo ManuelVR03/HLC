@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+
+    <ion-title>
+
+      Productos
+
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<!-- Como en la práctica anterior utilizamos ionchange cuando aparece ion-select-->
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+
+    <ion-item>
+
+      <ion-select placeholder="Seleccione producto" [(ngModel)]='codigoSeleccionado'
+        (ionChange)="seleccionadoProducto($event)">
+
+        <ion-label *ngFor="let producto of productos">
+
+          <ion-select-option value={{producto.codigo}}>{{producto.descripcion}}</ion-select-option>
+
+        </ion-label>
+
+      </ion-select>
+
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+        <ion-label>Código</ion-label>
+  
+        <ion-label>Descripción</ion-label>
+  
+        <ion-label>Unidades</ion-label>
+  
+        <ion-label>PVP</ion-label>
+  
+        <ion-label>Total</ion-label>
+
+        <ion-label>Eliminar</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let lineaDetalle of lineasDetalle; let i=index">
+
+      <ion-label>{{lineaDetalle.codigo}}</ion-label>
+
+      <ion-label>{{lineaDetalle.descripcion}}</ion-label>
+
+      <ion-label>{{lineaDetalle.unidades}}</ion-label>
+
+      <ion-label>{{lineaDetalle.pvp}}</ion-label>
+
+      <ion-label>{{lineaDetalle.total | number:'1.2-2'}}</ion-label>
+
+      <ion-label><ion-button (click)="pedirConfirmacionBorrado(i)"><ion-icon name="trash"></ion-icon></ion-button></ion-label>
+
+    </ion-item>
+
+    <ion-item>
+
+      <!-- el atributo slot se utiliza para indicar donde colocamos lo que queremos mostrar, donde hay varios valores posibles pero sobre todo utilizaremos start (a la izquierda de la página) y end (a la derecha)-->
+
+      <ion-label slot="end">Total: {{total | number:'1.2-2'}}</ion-label>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
