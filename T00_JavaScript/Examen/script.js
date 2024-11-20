@@ -50,4 +50,6 @@ window.onload = function () {
         addNewProd();
     });
     padre.appendChild(addBoton);
+
+    
 };

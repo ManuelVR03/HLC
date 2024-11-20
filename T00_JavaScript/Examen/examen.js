@@ -18,3 +18,17 @@ if(mayorEdad){
 document.write("Hola " + nombre)
 document.write("<h2>" + nombre + "</h2>")
 
+function test() {
+    var div = document.getElementById("contenido");
+    console.log(div.classList);
+    var clases = Array.from(div.classList);
+    console.log(clases);
+}
+
+nombres = ["Juan", "Pedro", "Luis", "Ana", "Maria"];
+console.log(nombres.splice(2, 3, "Carlos", "Sara"));
+console.log(nombres);
+
+
+
+window.addEventListener("load", test);
