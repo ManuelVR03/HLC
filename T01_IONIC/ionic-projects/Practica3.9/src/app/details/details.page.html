@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+ 
+    <ion-title>details</ion-title>
+ 
+  </ion-toolbar>
+ 
+ </ion-header>
+ 
+ 
+ 
+ <ion-content [fullscreen]="true">
+ 
+  <ion-card *ngIf="receivedData">
+ 
+    <ion-card-header>
+ 
+      <ion-card-title>Datos Recibidos</ion-card-title>
+ 
+    </ion-card-header>
+ 
+    <ion-card-content>
+ 
+      <p><strong>Nombre:</strong> {{ receivedData.name }}</p>
+ 
+      <p><strong>Edad:</strong> {{ receivedData.age }}</p>
+ 
+    </ion-card-content>
+ 
+  </ion-card>
+ 
+ </ion-content>

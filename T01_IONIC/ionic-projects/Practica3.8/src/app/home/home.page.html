@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ciudades
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let ciudad of ciudades" (click)="goToHoteles(ciudad.ciudad)">
+      {{ciudad.ciudad}}
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Componentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Lista con todos los componentes:</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Botones</ion-label>
+      <ion-button routerLink="/home" slot="end" fill="outline">Home</ion-button>
+      <ion-button [disabled]="true" slot="end" fill="outline">Disabled</ion-button>
+      <ion-button expand="block" slot="end">Block</ion-button>
+      <ion-button shape="round" slot="end">Round</ion-button>
+      <ion-button color="warning" slot="end">Warning</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox justify="start">CheckBox</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Texto" placeholder="Introduce un texto"></ion-input>
+      <ion-input label="Numerico" type="number" placeholder="000"></ion-input>
+      <ion-input label="Contraseña" type="password" value="password"></ion-input>
+      <ion-input label="Email" type="email" placeholder="email@domain.com"></ion-input>
+      <ion-input label="Telefono" type="tel" placeholder="888-888-888"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-radio-group value="manzana">
+        <ion-radio value="manzana">Manzana</ion-radio><br />
+        <ion-radio value="pera">Pera</ion-radio><br />
+        <ion-radio value="platano">Platano</ion-radio><br />
+        <ion-radio value="fresa">Fresa</ion-radio>
+      </ion-radio-group>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Select" placeholder="Títulos" value="fp">
+        <ion-select-option value="eso">ESO</ion-select-option>
+        <ion-select-option value="bachillerato">Bachillerato</ion-select-option>
+        <ion-select-option value="fp">Formación Profesional</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

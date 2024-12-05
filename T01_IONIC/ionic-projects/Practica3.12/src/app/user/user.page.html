@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre: {{user.nombre}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido: {{user.apellido}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha de nacimiento: {{user.fecha}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>DNI: {{user.dni}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

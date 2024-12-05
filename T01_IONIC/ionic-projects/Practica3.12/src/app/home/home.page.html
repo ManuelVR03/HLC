@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Formulario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label position="floating" color="primary">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="validations_form.get('nombre')?.touched">
+      <div *ngFor="let error of validationMessages.nombre">
+        <p *ngIf="validations_form.get('nombre')?.hasError(error.type)">{{ error.message }}</p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label position="floating" color="primary">Apellido</ion-label>
+      <ion-input type="text" formControlName="apellido"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="validations_form.get('apellido')?.touched">
+      <div *ngFor="let error of validationMessages.apellido">
+        <p *ngIf="validations_form.get('apellido')?.hasError(error.type)">{{ error.message }}</p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label position="floating" color="primary">Fecha</ion-label>
+      <ion-input type="text" formControlName="fecha"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="validations_form.get('fecha')?.touched">
+      <div *ngFor="let error of validationMessages.fecha">
+        <p *ngIf="validations_form.get('fecha')?.hasError(error.type)">{{ error.message }}</p>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label position="floating" color="primary">DNI</ion-label>
+      <ion-input type="text" formControlName="dni"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="validations_form.get('dni')?.touched">
+      <div *ngFor="let error of validationMessages.dni">
+        <p *ngIf="validations_form.get('dni')?.hasError(error.type)">{{ error.message }}</p>
+      </div>
+    </div>
+    <ion-button color="primary" class="submit-btn" expand="block" type="submit"
+      [disabled]="!validations_form.valid">Enviar</ion-button>
+  </form>
+    
+</ion-content>

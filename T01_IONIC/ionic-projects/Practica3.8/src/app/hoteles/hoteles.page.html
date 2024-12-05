@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Hoteles</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item><h2>Hoteles en {{ciudad}}:</h2></ion-item>
+    <ion-item *ngFor="let hotel of hoteles" (click) = goToValoraciones(hotel.nombre)>
+      {{hotel.nombre}}
+    </ion-item>
+  </ion-list>
+</ion-content>

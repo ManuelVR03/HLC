@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Valoraciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item><h2>Valoraciones de {{hotel}}:</h2></ion-item>
+    <ion-item *ngFor="let valoracion of valoraciones">
+      <ion-label>
+        <h4>{{valoracion.usuario}}</h4>
+        <p>{{valoracion.comentario}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
