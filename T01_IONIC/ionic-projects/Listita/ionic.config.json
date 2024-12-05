@@ -1,0 +1,7 @@
+{
+  "name": "Listita",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
