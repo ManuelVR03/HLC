@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>Cantidad: {{ producto.cantidad }}</p>
+        <p>Precio unitario: {{ producto.precio | currency }}</p>
+        <p>Kilocalorías: {{ producto.kilocalorias }} kcal</p>
+        <p>
+          <strong>
+            Precio total: {{ producto.cantidad * producto.precio | currency }}
+          </strong>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="none">
+    <ion-label>
+      <h2>Precio total de todos los productos:</h2>
+    </ion-label>
+    <ion-note slot="end">
+      <strong>{{ precioTotal | currency }}</strong>
+    </ion-note>
+  </ion-item>
+
+  <ion-button expand="block" (click)="mostrarAlertaAgregarProducto()">
+    Añadir Producto
+  </ion-button>
+</ion-content>

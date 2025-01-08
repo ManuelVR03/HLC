@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+
+        <ion-title>
+
+            Productos
+
+        </ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-button (click)="alertProducto()">Añadir Productos</ion-button>
+    <ion-list>
+        <ion-item>  
+            <ion-label>Código</ion-label>
+            <ion-label>Descripción</ion-label>
+            <ion-label>Cantidad</ion-label>
+            <ion-label>Precio</ion-label>
+        </ion-item>
+        <ion-item  *ngFor="let producto of productos;let i=index">
+            <ion-label>{{producto.codigo}}</ion-label>
+            <ion-label>{{producto.descripcion}}</ion-label>
+            <ion-label>{{producto.cantidad}}</ion-label>
+            <ion-label>{{producto.pvp.toFixed(2)}}<span>€</span></ion-label>
+        </ion-item>
+        <ion-item>  
+            <ion-label></ion-label>
+            <ion-label></ion-label>
+            <ion-label></ion-label>
+            <ion-label>Precio Total: {{total}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
